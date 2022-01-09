@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1.0" method="upgrade">
+
+    <name>Ramajax Use Example</name>
+    <version>1.0.1</version>
+    <description>Use Example for component Ramajax</description>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_ramajaxuseexample.ini</language>
+        <language tag="es-ES">es-ES/es-ES.com_ramajaxuseexample.ini</language>
+        <language tag="gl-ES">gl-ES/gl-ES.com_ramajaxuseexample.ini</language>
+        <language tag="pt-PT">pt-PT/pt-PT.com_ramajaxuseexample.ini</language>
+	</languages>
+
+    <administration>
+        <menu link='index.php?option=com_ramajaxuseexample'>Ramajax Use Example</menu>
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>ramajaxuseexample.php</filename>
+            <filename>controller.php</filename>
+            <filename>access.xml</filename>
+            <!-- SQL files section -->
+            <folder>sql</folder>
+            <!-- tables files section -->
+            <folder>views</folder>
+        </files>
+    </administration>
+
+    <files folder="site">
+        <filename>ramajaxuseexample.php</filename>
+        <filename>controller.php</filename>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
+</extension>

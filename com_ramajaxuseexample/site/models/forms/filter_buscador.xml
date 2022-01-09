@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter" 
+        addfieldpath="administrator/components/com_ramajax/models/fields">
+
+        <field 
+            name="league" 
+            type="ramajaxselectalone" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_LEAGUE"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_LEAGUE"
+            slaveFieldName="league"
+            slaveFieldTable="#__ramajax_league_list"
+	    />
+
+        <field 
+            name="team" 
+            type="ramajaxselect" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_TEAM"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_TEAM"
+            masterFieldName="league"
+            masterFieldTable="#__ramajax_league_list"
+            slaveFieldName="team"
+            slaveFieldTable="#__ramajax_league_team_map"
+	    />
+
+        <field 
+            name="player" 
+            type="ramajaxselect" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_PLAYER"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_PLAYER"
+            masterFieldName="team"
+            masterFieldTable="#__ramajax_league_team_map"
+            slaveFieldName="player"
+            slaveFieldTable="#__ramajax_use_example"
+	    />
+    
+        <field 
+            name="player_country" 
+            type="ramajaxselectalone" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_PLAYER_COUNTRY"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_PLAYER_COUNTRY"
+            slaveFieldName="player_country"
+            slaveFieldTable="#__ramajax_use_example"
+	    />
+        <field 
+            name="player_state" 
+            type="ramajaxselect" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_PLAYER_STATE"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_PLAYER_STATE"
+            masterFieldName="player_country"
+            masterFieldTable="#__ramajax_use_example"
+            slaveFieldName="player_state"
+            slaveFieldTable="#__ramajax_use_example"
+	    />
+        <field 
+            name="player_city" 
+            type="ramajaxselect" 
+            label="RAMAJAX_FIELD_SELECT_LABEL_PLAYER_CITY"
+            emptyValueText="RAMAJAX_FIELD_SELECT_EMPTY_VALUE_TEXT_PLAYER_CITY"
+            masterFieldName="player_state"
+            masterFieldTable="#__ramajax_use_example"
+            slaveFieldName="player_city"
+            slaveFieldTable="#__ramajax_use_example"
+	    />
+
+    </fields>
+
+    <fields name="list">
+        <field
+            name="limit"
+            type="limitbox"
+            class="input-mini"
+            default="25"
+            label="COM_CONTENT_LIST_LIMIT"
+            description="COM_RAMCLASIFICADO_LIST_LIMIT_DESC"
+            onchange="this.form.submit();"
+        />
+    </fields>
+</form>

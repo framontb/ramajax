@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1.0" method="upgrade">
+
+    <name>Ramajax</name>
+    <version>1.0.0</version>
+    <description>Ramón Ajax: set up Dynamic combo select in your custom component populated via Ajax</description>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <administration>
+        <menu link='index.php?option=com_ramajax'>Ramajax</menu>
+        
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>ramajax.php</filename>
+            <filename>controller.php</filename>
+            <filename>access.xml</filename>
+            <folder>sql</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+
+    <files folder="site">
+        <filename>ramajax.php</filename>
+        <folder>controllers</folder>
+        <folder>assets</folder>
+    </files>
+</extension>
